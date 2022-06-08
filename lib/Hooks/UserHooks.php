@@ -184,9 +184,11 @@ class UserHooks
                             $this->loggingService->write(\OCA\UserCas\Service\LoggingService::DEBUG, 'phpCAS creating a new user with UID: ' . $uid);
 
                             /** @var bool|\OCP\IUser the created user or false $uid */
+                            $enabled = boolval($this->config->getAppValue($this->appName, 'cas_autocreate_disabled_user'));
                             $user = $this->userService->create($uid, $this->backend);
 
                             if ($user instanceof \OCP\IUser) {
+                                $user->setEnabled(boolval($enabled));
 
                                 $this->loggingService->write(\OCA\UserCas\Service\LoggingService::DEBUG, 'phpCAS created new user with UID: ' . $uid);
                             }

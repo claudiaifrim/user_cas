@@ -111,6 +111,9 @@ msgstr "Teilen-Links mit CAS schützen"
 msgid "Autocreate user after first CAS login?"
 msgstr "Benutzer nach erstem CAS Login automatisch erstellen?"
 
+msgid "Make autocreated user default disabled"
+msgstr "Automatisch erstellte Benutzer standardmäßig deaktivieren"
+
 #: templates/admin.php:70
 msgid "Link CAS authentication with LDAP users and groups backend"
 msgstr "CAS Authentifizierung mit LDAP Backend verknüpfen"

@@ -123,6 +123,7 @@ class SettingsController extends Controller
      * @param string|null $cas_ecas_request_full_userdetails
      * @param string|null $cas_force_login
      * @param string|null $cas_autocreate
+     * @param string|null $cas_autocreate_disabled_user
      * @param string|null $cas_update_user_data
      * @param string|null $cas_link_to_ldap_backend
      * @param string|null $cas_disable_logout
@@ -142,7 +143,7 @@ class SettingsController extends Controller
                                     $cas_access_allow_groups, $cas_ecas_accepted_strengths, $cas_ecas_retrieve_groups, $cas_ecas_assurance_level, $cas_access_group_quotas, $cas_force_login_exceptions, $cas_ecas_internal_ip_range,
                                     $cas_import_ad_protocol, $cas_import_ad_host, $cas_import_ad_port, $cas_import_ad_user, $cas_import_ad_domain, $cas_import_ad_password, $cas_import_ad_base_dn, $cas_import_ad_sync_filter, $cas_import_ad_sync_pagesize,
                                     $cas_import_map_uid, $cas_import_map_displayname, $cas_import_map_email, $cas_import_map_groups, $cas_import_map_groups_description, $cas_import_map_quota, $cas_import_map_enabled, $cas_import_map_enabled_and_bitwise, $cas_import_map_dn, $cas_import_map_dn_filter,
-                                    $cas_ecas_attributeparserenabled = NULL, $cas_ecas_request_full_userdetails = NULL, $cas_force_login = NULL, $cas_autocreate = NULL, $cas_update_user_data = NULL, $cas_link_to_ldap_backend = NULL,
+                                    $cas_ecas_attributeparserenabled = NULL, $cas_ecas_request_full_userdetails = NULL, $cas_force_login = NULL, $cas_autocreate = NULL, $cas_autocreate_disabled_user = NULL, $cas_update_user_data = NULL, $cas_link_to_ldap_backend = NULL,
                                     $cas_disable_logout = NULL, $cas_disable_singlesignout = NULL, $cas_use_proxy = NULL, $cas_import_merge = NULL, $cas_import_merge_enabled = NULL, $cas_groups_letter_umlauts = NULL, $cas_keep_ticket_ids = NULL, $cas_groups_json_decode = NULL,
                                     $cas_groups_create_default_for_user = NULL, $cas_shares_protected = NULL)
     {
@@ -215,6 +216,7 @@ class SettingsController extends Controller
             # Checkbox settings
             $this->config->setAppValue($this->appName, 'cas_force_login', ($cas_force_login !== NULL) ? '1' : '0');
             $this->config->setAppValue($this->appName, 'cas_autocreate', ($cas_autocreate !== NULL) ? '1' : '0');
+            $this->config->setAppValue($this->appName, 'cas_autocreate_disabled_user', ($cas_autocreate_disabled_user !== NULL) ? '1' : '0');
             $this->config->setAppValue($this->appName, 'cas_update_user_data', ($cas_update_user_data !== NULL) ? '1' : '0');
             $this->config->setAppValue($this->appName, 'cas_link_to_ldap_backend', ($cas_link_to_ldap_backend !== NULL) ? '1' : '0');
             $this->config->setAppValue($this->appName, 'cas_disable_logout', ($cas_disable_logout !== NULL) ? '1' : '0');

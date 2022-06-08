@@ -111,6 +111,11 @@ style('user_cas', 'settings');
                 <label class='checkbox'
                        for="cas_autocreate"><?php p($l->t('Autocreate user after first CAS login?')); ?></label>
             </p>
+            <p><input type="checkbox" id="cas_autocreate_disabled_user"
+                      name="cas_autocreate_disabled_user" <?php print_unescaped((($_['cas_autocreate_disabled_user'] === 'true' || $_['cas_autocreate_disabled_user'] === 'on' || $_['cas_autocreate_disabled_user'] === '1' || $_['cas_autocreate_disabled_user'] === '') ? 'checked="checked"' : '')); ?>>
+                <label class='checkbox'
+                       for="cas_autocreate_disabled_user"><?php p($l->t('Make autocreated user default disabled')); ?></label>
+            </p>
 
             <p><input type="checkbox" id="cas_update_user_data"
                       name="cas_update_user_data" <?php print_unescaped((($_['cas_update_user_data'] === 'true' || $_['cas_update_user_data'] === 'on' || $_['cas_update_user_data'] === '1') ? 'checked="checked"' : '')); ?>>
